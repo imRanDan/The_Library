@@ -43,6 +43,12 @@ class UI {
 
       list.appendChild(row);
    }
+
+   static clearFields() {
+      document.querySelector('#title').value = '';
+      document.querySelector('#author').value = '';
+      document.querySelector('#pages').value = '';
+   }
 }
 
 // Store Class: Handles Storage
@@ -62,8 +68,14 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
    // Instatiate Book
    const book = new Book(title, author, pages);
+   
+   // Add Book to UI
+   UI.addBookToList(book);
 
-   console.log(book)
+
+   //Clear fields
+   UI.clearFields();
+
 });
 
 //Event: Remove a Book
