@@ -57,6 +57,9 @@ class UI {
       const container = document.querySelector('.container');
       const form = document.querySelector('#book-form');
       container.insertBefore(div, form);
+
+      // Message vanishes in 5 seconds
+      setTimeout(() => document.querySelector('.alert').remove(), 5000);
    }
 
    static clearFields() {
